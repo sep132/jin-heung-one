@@ -18,7 +18,7 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
-        <h4>{gangnamUdon}</h4>
+        <h4 onClick={() =>udon('강남여자')}>{gangnamUdon}</h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
