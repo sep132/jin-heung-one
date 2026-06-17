@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Alien+Block&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  cursor: default;
+}
+
+.container>h1 {
+  font-family: 'Alien Block', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #007bff;
+  /* margin-bottom: 13px; */
+  transition: color .2s;
+
+  &:hover {
+    color: #006CE0;
+  }
+
+  &:active {
+    color: #007bff;
+  }
+}
+.changeLang{
+  display: inline;
+  width: 75px;
+  position: relative;
+  top: 10px;
+  left: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color .2s;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    background-color: #006CE0;
+  }
+}
+p {
+  margin-bottom: 13px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color .2s;
+}
+
+.searchButton:hover {
+  background-color: #006CE0;
+}
+
+/* padding: '10px 20px', 
+fontSize: '16px', 
+cursor: 'pointer', 
+backgroundColor: '#007BFF', 
+color: 'white', 
+border: 'none', 
+borderRadius: '4px'  */

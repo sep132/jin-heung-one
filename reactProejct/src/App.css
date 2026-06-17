@@ -1,0 +1,46 @@
+.App {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: sans-serif;
+}
+
+/* 1. 이름 정하기 버튼 스타일 (div) */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #eee;
+    /* 기본 회색 */
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    /* 부드러운 색상 전환 */
+}
+
+/* 이름 정하기 버튼에 마우스 올렸을 때 */
+.btn:hover {
+    background-color: #ddd;
+    /* 마우스 올리면 조금 더 어두운 회색 */
+}
+
+
+/* 2. 입금 / 출금 버튼 스타일 (button) */
+.bank-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    /* 기본 파란색 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+/* 입금 / 출금 버튼에 마우스 올렸을 때 */
+.bank-btn:hover {
+    background-color: #0056b3;
+    /* 마우스 올리면 진한 파란색 */
+}
