@@ -9,7 +9,11 @@ function App() {
 
   return (
     <>
-
+      <div className="container">
+        <footer>
+          
+        </footer>
+      </div>
     </>
   )
 }

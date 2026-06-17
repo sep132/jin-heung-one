@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Sporty Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="three-stripes"></div>
+
+    <button class="theme-toggle" id="themeBtn">SWITCH TO BLACK</button>
+
+    <div class="container">
+        <h1>READY<br>TO RUN.</h1>
+        <h2>임요셉 PORTFOLIO</h2>
+        <p>
+            트렌드를 앞서가는 개발자입니다.<br>
+            마치 스포츠 경기처럼 한계를 돌파하고, 최상의 퍼포먼스를 내는 코드를 작성합니다.
+        </p>
+        <div class="workBtn">
+            <a href="#work" class="btn">View My Work</a>
+        </div>
+    </div>
+    <section id="work" class="secContainer">
+        <h1 class="secTitle">My skills</h1>
+        <div class="boxContainer">
+            <article class="secBox">
+                <div class="box-inner">
+                    <div class="box-front">
+                        <i class="fa-brands fa-python"></i>
+                        <h3>PYTHON</h3>
+                    </div>
+                    <div class="box-back">
+                        <p>기초 문법 및 데이터 처리 학습 중.<br><br>앞으로 자동화 봇(Discord 등)을 직접 구현해 볼 계획입니다.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="secBox">
+                <div class="box-inner">
+                    <div class="box-front">
+                        <i class="fa-brands fa-java"></i>
+                        <h3>JAVA</h3>
+                    </div>
+                    <div class="box-back">
+                        <p>객체지향 프로그래밍(OOP) 개념 이해 완료.<br><br>추후 Spring 프레임워크를 배워 백엔드 기초를 다질 것입니다.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="secBox">
+                <div class="box-inner">
+                    <div class="box-front">
+                        <i class="fa-brands fa-js"></i>
+                        <h3>JAVASCRIPT</h3>
+                    </div>
+                    <div class="box-back">
+                        <p>DOM 조작 및 기본 이벤트 제어 가능.<br><br>React를 학습하여 동적이고 화려한 웹 프론트엔드를 구축하고 싶습니다.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <section class="secContainer" id="projects">
+        <h1 class="secTitle">MATCH RECORDS</h1>
+
+        <div class="project-board">
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>01. RETRO PORTFOLIO</h3>
+                    <p>HTML / CSS / JS</p>
+                    <span>나만의 레트로 스포티 웹사이트 제작 및 다크모드 구현</span>
+                </div>
+                <a href="#" class="btn-small">GITHUB</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>02. DISCORD BOT</h3>
+                    <p>Python</p>
+                    <span>학교 급식 메뉴를 알려주는 파이썬 디스코드 봇</span>
+                </div>
+                <a href="#" class="btn-small">GITHUB</a>
+            </div>
+        </div>
+    </section>
+    <section class="secContainer" id="contact">
+        <h1 class="secTitle">Project List</h1>
+
+        <div class="contact-box">
+            <h3>Game with AI</h3>
+
+            <div class="contact-links">
+                <a href="https://ai.studio/apps/a112503a-7730-4cb0-bcdf-e283ba1123f8" target="_blank"
+                    class="btn">GAME</a>
+                <a href="https://github.com/sep132" target="_blank" class="btn">GITHUB</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <marquee scrollamount="15">
+            KEEP RUNNING • NEVER GIVE UP • YOSEP PORTFOLIO • HTML/CSS/JS • KEEP RUNNING • NEVER GIVE UP • [본인 이름]
+            PORTFOLIO •
+        </marquee>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
