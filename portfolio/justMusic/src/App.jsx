@@ -3,17 +3,18 @@ import './App.css';
 // ----------------------------------------------------
 // 1. MusicCard 컴포넌트: 개별 음악의 정보를 화면에 표시합니다.
 // ----------------------------------------------------
+
 const MusicCard = ({ title, artist, genre, imageUrl, previewUrl }) => {
   return (
     <div className='card' style={styles.card}>
       {/* 앨범 커버가 들어갈 임시 영역 */}
-      <img src={imageUrl} alt={`${title} 앨범 커버`} style={styles.albumImage} />
+      <img src={imageUrl} alt={`${title} 앨범 커버`} className='albumImage' />
       <h3>{title}</h3>
       <p><strong>아티스트:</strong> {artist}</p>
       <p><strong>장르:</strong> {genre}</p>
 
       <button
-        style={styles.button}
+        className='listenBtn'
         onClick={() => {
           if (previewUrl) {
             new Audio(previewUrl).play();
@@ -63,13 +64,15 @@ export default function App() {
   // 추천된 음악 목록을 저장하는 state (초기값은 빈 배열)
   const [recommendations, setRecommendations] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // 검색 버튼 클릭 시 실행되는 함수
   const handleSearch = () => {
     if (!keyword.trim()) {
       alert('검색어를 입력해주세요!');
       return;
     }
-
+    setIsLoading(true);
     // 1. 애플 아이튠즈 음악 검색 API URL (입력한 keyword를 주소에 포함)
     const url = `https://itunes.apple.com/search?term=${encodeURIComponent(keyword)}&entity=musicTrack&limit=6`;
 
@@ -94,9 +97,11 @@ export default function App() {
 
         // 4. 가공된 데이터를 State에 넣어 화면을 업데이트합니다.
         setRecommendations(formattedData);
+        setIsLoading(false);
       })
       .catch((error) => {
         // 에러가 발생했을 때 예외 처리
+        setIsLoading(false);
         console.error('데이터를 가져오는 중 오류 발생:', error);
         alert('음악을 불러오지 못했습니다.');
       });
@@ -121,7 +126,15 @@ export default function App() {
       </div>
 
       <hr className='divider' style={styles.divider} />
-
+      {/* 로딩 중일 때는 로딩 메시지를, 아닐 때는 결과를 보여줌 */}
+      {isLoading ? (
+        <div style={{ textAlign: 'center', padding: '50px', fontSize: '20px' }}>
+          🎵 취향에 맞는 음악을 찾는 중입니다...
+        </div>
+      ) : (
+        <MusicList tracks={recommendations} />
+      )}
+        
       {/* 결과 영역 */}
       <h2>추천 결과</h2>
       <MusicList tracks={recommendations} />
@@ -153,13 +166,11 @@ export default function App() {
 // ----------------------------------------------------
 
 const styles = {
-  albumImage: { width: '80%', height: 'auto', aspectRatio: '1 / 1', display: 'block', margin: '0 auto 10px auto', objectFit: 'cover', borderRadius: '8px', },
   container: { maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' },
   searchSection: { display: 'flex', gap: '10px', marginBottom: '20px' },
   input: { flex: 1, padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' },
   divider: { margin: '20px 0', border: '0.5px solid #eee' },
   list: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' },
-  card: { border: '1px solid #ddd', padding: '15px', borderRadius: '8px', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' },
   imagePlaceholder: { width: '100%', height: '150px', backgroundColor: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', borderRadius: '4px', marginBottom: '10px' },
-  button: { marginTop: '10px', padding: '8px 16px', cursor: 'pointer', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '4px' }
+
 };
